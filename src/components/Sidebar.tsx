@@ -19,6 +19,14 @@ const CALCULATORS: Topic[] = [
         relativePath: "radian-segment-frac-pi",
         name: "Radian Segment(Fraction Pi)",
       },
+      {
+        relativePath: "radian-segment-pi",
+        name: "Radian Segment(Pi)",
+      },
+      {
+        relativePath: "radian-segment",
+        name: "Radian Segment",
+      },
     ],
     topic: "geometry",
   },
