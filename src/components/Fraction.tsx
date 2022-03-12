@@ -1,25 +1,27 @@
 import { Input } from "dragontail-experimental";
-import { FC, useState } from "react";
+import { FC } from "react";
 
-interface FractionProps {}
+export interface FractionInputProps {
+  fraction: Fraction;
+  setFraction: React.Dispatch<React.SetStateAction<Fraction>>;
+}
 
-interface Fraction {
+export interface Fraction {
   denominator: string;
   numerator: string;
 }
 
-export const FractionInput: FC<FractionProps> = ({}) => {
-  const [fraction, setFraction] = useState<Fraction>({
-    denominator: "",
-    numerator: "",
-  });
-
+export const FractionInput: FC<FractionInputProps> = ({
+  fraction,
+  setFraction,
+}) => {
   return (
     <div className="flex flex-col justify-center items-center w-32">
       {/* fraction */}
       <Input
         placeholder="numerator"
         value={fraction.numerator}
+        type="number"
         onChange={(t) => {
           setFraction((old) => ({
             ...old,
@@ -29,6 +31,7 @@ export const FractionInput: FC<FractionProps> = ({}) => {
       />
       <hr className="h-[0.001px] border-t-slate-50 my-1 w-11/12" />
       <Input
+        type="number"
         placeholder="denominator"
         onChange={(t) => {
           setFraction((old) => ({
