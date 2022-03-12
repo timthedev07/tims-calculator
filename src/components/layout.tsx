@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Head from "next/head";
+import { Sidebar } from "./Sidebar";
 
 export const metadata = {
   title: "",
@@ -51,7 +52,13 @@ export const Layout: FC = ({ children }) => {
         <link rel="apple-touch-icon" href="/logo192.png" />
       </Head>
 
-      <div id="App">{children}</div>
+      <div
+        id="App"
+        className="relative min-h-screen flex bg-gray-800 text-white"
+      >
+        <Sidebar />
+        {children}
+      </div>
     </>
   );
 };
