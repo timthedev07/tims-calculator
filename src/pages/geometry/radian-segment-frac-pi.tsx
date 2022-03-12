@@ -20,7 +20,9 @@ const RadianSegment: NextPage = () => {
         segmentArea(
           (parseFloat(numerator) / parseFloat(denominator)) * Math.PI,
           parseFloat(radius)
-        ).toString()
+        )
+          .toPrecision(4)
+          .toString()
       );
     } else {
       setAnswer("");
