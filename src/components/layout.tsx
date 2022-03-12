@@ -57,7 +57,7 @@ export const Layout: FC = ({ children }) => {
         className="relative min-h-screen flex bg-gray-800 text-white"
       >
         <Sidebar />
-        {children}
+        <div className="flex justify-center items-start w-full">{children}</div>
       </div>
     </>
   );

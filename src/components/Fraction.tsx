@@ -15,7 +15,7 @@ export const FractionInput: FC<FractionProps> = ({}) => {
   });
 
   return (
-    <div className="flex flex-col justify-center items-center w-11">
+    <div className="flex flex-col justify-center items-center w-32">
       {/* fraction */}
       <Input
         placeholder="numerator"
@@ -27,7 +27,6 @@ export const FractionInput: FC<FractionProps> = ({}) => {
           }));
         }}
       />
-      <input value="" />
       <hr className="h-[0.001px] border-t-slate-50 my-1 w-11/12" />
       <Input
         placeholder="denominator"
