@@ -40,7 +40,6 @@ export const Sidebar: FC<SidebarProps> = ({}) => {
       </Link>
       <hr className="w-11/12 my-3 h-[0.001px] border-t-slate-400" />
       {CALCULATORS.map((each) => {
-        console.log(each);
         return (
           <section key={each.topic}>
             <h4 className="text-slate-100">{capitalize(each.topic)}</h4>
