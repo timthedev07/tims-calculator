@@ -24,3 +24,10 @@ export const segmentArea = (
   const sector = sectorArea(subtendedAngleInRadians, radius);
   return sector - triangle;
 };
+
+export const segmentPerimeter = (
+  subtendedAngleInRadians: number,
+  radius: number
+) => {
+  return radius * (2 + subtendedAngleInRadians);
+};
