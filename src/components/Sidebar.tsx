@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
+import { capitalize } from "../utils/strings";
 
 interface SidebarProps {}
 
@@ -7,7 +8,7 @@ interface Topic {
   topic: string;
   calculators: {
     name: string;
-    link: string;
+    relativePath: string;
   }[];
 }
 
@@ -15,8 +16,8 @@ const CALCULATORS: Topic[] = [
   {
     calculators: [
       {
-        link: "/radian-segment",
-        name: "Radian Segment",
+        relativePath: "radian-segment-frac-pi",
+        name: "Radian Segment(Fraction Pi)",
       },
     ],
     topic: "geometry",
@@ -30,13 +31,15 @@ export const Sidebar: FC<SidebarProps> = ({}) => {
       <hr className="w-11/12 my-3 h-[0.001px] border-t-slate-400" />
       {CALCULATORS.map((each) => (
         <section key={each.topic}>
-          <h4 className="text-slate-100">{each.topic}</h4>
+          <h4 className="text-slate-100">{capitalize(each.topic)}</h4>
           {each.calculators.map((calculator) => (
             <article
               className="ml-3 text-slate-400 transition-all hover:underline duration-300 hover:text-slate-100"
               key={calculator.name}
             >
-              <Link href={calculator.link}>{calculator.name}</Link>
+              <Link href={each.topic + "/" + calculator.relativePath}>
+                {calculator.name}
+              </Link>
             </article>
           ))}
         </section>
