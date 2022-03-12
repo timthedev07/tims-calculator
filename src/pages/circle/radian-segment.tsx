@@ -40,7 +40,6 @@ const RadianSegment: NextPage = () => {
           }}
           placeholder="angle"
         />
-        <span className="text-3xl">π</span>{" "}
         <Input
           value={radius}
           type="number"
