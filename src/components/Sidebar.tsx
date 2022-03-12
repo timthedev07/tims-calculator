@@ -27,6 +27,10 @@ const CALCULATORS: Topic[] = [
         relativePath: "radian-segment",
         name: "Radian Segment",
       },
+      {
+        relativePath: "radian-sector-perimeter",
+        name: "Radian Sector Perimeter",
+      },
     ],
     topic: "circle",
   },

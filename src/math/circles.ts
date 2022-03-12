@@ -25,7 +25,7 @@ export const segmentArea = (
   return sector - triangle;
 };
 
-export const segmentPerimeter = (
+export const sectorPerimeter = (
   subtendedAngleInRadians: number,
   radius: number
 ) => {
