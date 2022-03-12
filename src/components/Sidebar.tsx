@@ -27,23 +27,28 @@ const CALCULATORS: Topic[] = [
 export const Sidebar: FC<SidebarProps> = ({}) => {
   return (
     <nav className="w-72 bg-cyan-800 shadow-lg p-5 flex flex-col">
-      <h3>Calculators</h3>
+      <Link passHref href="/">
+        <h3 className="cursor-pointer">Calculators</h3>
+      </Link>
       <hr className="w-11/12 my-3 h-[0.001px] border-t-slate-400" />
-      {CALCULATORS.map((each) => (
-        <section key={each.topic}>
-          <h4 className="text-slate-100">{capitalize(each.topic)}</h4>
-          {each.calculators.map((calculator) => (
-            <article
-              className="ml-3 text-slate-400 transition-all hover:underline duration-300 hover:text-slate-100"
-              key={calculator.name}
-            >
-              <Link href={each.topic + "/" + calculator.relativePath}>
-                {calculator.name}
-              </Link>
-            </article>
-          ))}
-        </section>
-      ))}
+      {CALCULATORS.map((each) => {
+        console.log(each);
+        return (
+          <section key={each.topic}>
+            <h4 className="text-slate-100">{capitalize(each.topic)}</h4>
+            {each.calculators.map((calculator) => (
+              <article
+                className="ml-3 text-slate-400 transition-all hover:underline duration-300 hover:text-slate-100"
+                key={calculator.name}
+              >
+                <Link href={"/" + each.topic + "/" + calculator.relativePath}>
+                  {calculator.name}
+                </Link>
+              </article>
+            ))}
+          </section>
+        );
+      })}
     </nav>
   );
 };
