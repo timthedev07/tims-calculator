@@ -28,13 +28,13 @@ const CALCULATORS: Topic[] = [
         name: "Radian Segment",
       },
     ],
-    topic: "geometry",
+    topic: "circle",
   },
 ];
 
 export const Sidebar: FC<SidebarProps> = ({}) => {
   return (
-    <nav className="w-72 bg-cyan-800 shadow-lg p-5 flex flex-col">
+    <nav className="w-80 bg-cyan-800 shadow-lg p-5 flex flex-col">
       <Link passHref href="/">
         <h3 className="cursor-pointer">Calculators</h3>
       </Link>
